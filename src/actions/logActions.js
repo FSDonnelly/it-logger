@@ -10,20 +10,6 @@ import {
   SEARCH_LOGS
 } from './types';
 
-// export const getLogs =  () => {
-//     return async (dispatch) => {
-//   setLoadingg()
-
-//     const res = await fetch('/logs')
-//     const data = await res.json()
-
-//     dispatch({
-//         type: GET_LOGS,
-//         payload: data
-//     })
-//     }
-
-// };
 // Get all logs from server
 export const getLogs = () => async dispatch => {
   try {
@@ -37,7 +23,7 @@ export const getLogs = () => async dispatch => {
       payload: data
     });
   } catch (err) {
-    dispatch({ type: LOGS_ERROR, payload: err.response.data });
+    dispatch({ type: LOGS_ERROR, payload: err.response.statusText });
   }
 };
 
@@ -60,7 +46,7 @@ export const addLog = log => async dispatch => {
       payload: data
     });
   } catch (err) {
-    dispatch({ type: LOGS_ERROR, payload: err.response.data });
+    dispatch({ type: LOGS_ERROR, payload: err.response.statusText });
   }
 };
 
@@ -78,7 +64,7 @@ export const deleteLog = id => async dispatch => {
       payload: id
     });
   } catch (err) {
-    dispatch({ type: LOGS_ERROR, payload: err.response.data });
+    dispatch({ type: LOGS_ERROR, payload: err.response.statusText });
   }
 };
 
@@ -100,7 +86,7 @@ export const updateLog = log => async dispatch => {
       payload: data
     });
   } catch (err) {
-    dispatch({ type: LOGS_ERROR, payload: err.response.data });
+    dispatch({ type: LOGS_ERROR, payload: err.response.statusText });
   }
 };
 
@@ -117,7 +103,7 @@ export const searchLogs = text => async dispatch => {
       payload: data
     });
   } catch (err) {
-    dispatch({ type: LOGS_ERROR, payload: err.response.data });
+    dispatch({ type: LOGS_ERROR, payload: err.response.statusText });
   }
 };
 
