@@ -42,6 +42,16 @@
       "firstName": "Frank",
       "lastName": "Zappa",
       "id": 4
+    },
+    {
+      "firstName": "John ",
+      "lastName": "Lennon",
+      "id": 5
+    },
+    {
+      "firstName": "Bob ",
+      "lastName": "Johnson",
+      "id": 6
     }
   ]
 }

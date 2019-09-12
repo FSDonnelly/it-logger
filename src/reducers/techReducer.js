@@ -20,10 +20,23 @@ export default (state = initialState, { type, payload }) => {
         techs: payload,
         loading: false
       };
+    case ADD_TECH:
+      return {
+        ...state,
+        techs: [...state.techs, payload],
+        loading: false
+      };
     case SET_LOADING:
       return {
         ...state,
         loading: true
+      };
+    case TECHS_ERROR:
+      console.error(payload);
+      return {
+        ...state,
+        error: payload,
+        loading: false
       };
     default:
       return state;
